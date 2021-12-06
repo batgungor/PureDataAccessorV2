@@ -24,7 +24,7 @@ namespace PureDataAccessor.EntityFrameworkCore.Repository
             _dbSet.Add(entity);
         }
 
-        public void Delete(int Id)
+        public void Delete(object Id)
         {
             var entity = GetById(Id);
             Delete(entity);
@@ -53,7 +53,7 @@ namespace PureDataAccessor.EntityFrameworkCore.Repository
             return _dbSet.ToList();
         }
 
-        public TEntity GetById(int Id)
+        public TEntity GetById(object Id)
         {
             return _dbSet.Find(Id);
         }

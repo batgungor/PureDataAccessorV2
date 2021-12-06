@@ -8,6 +8,5 @@ namespace PureDataAccessor.Core
 {
     public class PDABaseEntity
     {
-        public int Id { get; set; }
     }
 }

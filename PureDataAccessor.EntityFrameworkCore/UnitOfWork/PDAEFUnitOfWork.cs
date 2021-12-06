@@ -26,15 +26,15 @@ namespace PureDataAccessor.EntityFrameworkCore.UnitOfWork
 
         public IPDARepository<TEntity> GetRepository<TEntity>() where TEntity : PDABaseEntity
         {
-            PDAEFRepository<TEntity> repository;
+            IPDARepository<TEntity> repository;
             var repositoryAlreadyCreated = _repositories.ContainsKey(typeof(TEntity));
             if (repositoryAlreadyCreated)
             {
-                repository = (PDAEFRepository<TEntity>)_repositories.Where(q => q.Key == typeof(TEntity)).FirstOrDefault().Value;
+                repository = (IPDARepository<TEntity>)_repositories.Where(q => q.Key == typeof(TEntity)).FirstOrDefault().Value;
             }
             else
             {
-                repository = new PDAEFRepository<TEntity>(_context);
+                repository = _contextOptions.DBType.GetRepository<TEntity>(_context);
                 _repositories.Add(typeof(TEntity), repository);
             }
             return repository;

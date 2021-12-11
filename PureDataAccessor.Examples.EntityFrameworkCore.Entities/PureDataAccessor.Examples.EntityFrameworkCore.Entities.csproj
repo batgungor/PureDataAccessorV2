@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PureDataAccessor.Core\PureDataAccessor.Core.csproj" />
+    <ProjectReference Include="..\PureDataAccessor.EntityFrameworkCore\PureDataAccessor.EntityFrameworkCore.csproj" />
   </ItemGroup>
 
 </Project>

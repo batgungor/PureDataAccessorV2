@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PureDataAccessor.Core;
-using PureDataAccessor.Core.Repository;
 using PureDataAccessor.EntityFrameworkCore.Context;
 using System;
 using System.Collections.Generic;
@@ -9,7 +8,7 @@ using System.Linq.Expressions;
 
 namespace PureDataAccessor.EntityFrameworkCore.Repository
 {
-    public class PDAEFRepository<TEntity> : IPDARepository<TEntity> where TEntity : PDABaseEntity
+    public class PDAEFRepository<TEntity> : IPDARepository<TEntity> where TEntity : PDAEFBaseEntity
     {
         private readonly PDAEFContext _context;
         private readonly DbSet<TEntity> _dbSet;

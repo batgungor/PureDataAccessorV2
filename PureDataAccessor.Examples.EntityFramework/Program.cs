@@ -1,15 +1,8 @@
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using PureDataAccessor.Core.UnitOfWork;
-using PureDataAccessor.EntityFrameworkCore.Context;
+using PureDataAccessor.EntityFrameworkCore.UnitOfWork;
 using PureDataAccessor.Examples.EntityFrameworkCore.Infrastructure;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace PureDataAccessor.Examples.EntityFrameworkCore
 {
@@ -21,7 +14,7 @@ namespace PureDataAccessor.Examples.EntityFrameworkCore
             using (var serviceScope = host.Services.CreateScope())
             {
                 var services = serviceScope.ServiceProvider;
-                var unitOfWork = services.GetRequiredService<IPDAUnitOfWork>();
+                var unitOfWork = services.GetRequiredService<IPDAEFUnitOfWork>();
                 unitOfWork.ReCreateDB();
                 //unitOfWork.DeleteDB();
                 //unitOfWork.Migrate();

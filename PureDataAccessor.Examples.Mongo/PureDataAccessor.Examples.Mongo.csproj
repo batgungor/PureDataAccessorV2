@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PureDataAccessor.Examples.Mongo.Entities\PureDataAccessor.Examples.Mongo.Entities.csproj" />
+    <ProjectReference Include="..\PureDataAccessor.Mongo\PureDataAccessor.Mongo.csproj" />
+  </ItemGroup>
+
+</Project>

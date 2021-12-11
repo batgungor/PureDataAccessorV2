@@ -3,21 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{3E5DF1BA-9ABF-41A9-A9C0-D347E8771976}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PureDataAccessor.Core", "PureDataAccessor.Core\PureDataAccessor.Core.csproj", "{BEF6A502-6F3D-4A46-8F3A-267C3261FD63}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Implementations", "Implementations", "{6761FE09-52E3-4942-B7BD-767C836D8A47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PureDataAccessor.EntityFrameworkCore", "PureDataAccessor.EntityFrameworkCore\PureDataAccessor.EntityFrameworkCore.csproj", "{CC4D201B-7200-4D2E-8F41-F00A9CF4B08A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PureDataAccessor.EntityFrameworkCore", "PureDataAccessor.EntityFrameworkCore\PureDataAccessor.EntityFrameworkCore.csproj", "{CC4D201B-7200-4D2E-8F41-F00A9CF4B08A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{337A8C80-4946-4C8D-B8AE-FEEC62B2C3FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PureDataAccessor.Examples.EntityFrameworkCore", "PureDataAccessor.Examples.EntityFramework\PureDataAccessor.Examples.EntityFrameworkCore.csproj", "{45FDE202-691C-4D26-8B86-75AB58D9DE7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PureDataAccessor.Examples.EntityFrameworkCore", "PureDataAccessor.Examples.EntityFramework\PureDataAccessor.Examples.EntityFrameworkCore.csproj", "{45FDE202-691C-4D26-8B86-75AB58D9DE7C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EntityFrameworkCore", "EntityFrameworkCore", "{01F0B4F0-129F-4115-9CAD-CA7C949D26A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PureDataAccessor.Examples.EntityFrameworkCore.Entities", "PureDataAccessor.Examples.EntityFrameworkCore.Entities\PureDataAccessor.Examples.EntityFrameworkCore.Entities.csproj", "{B49DD3AE-A8EC-4758-A69B-21FF2AE8A0ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PureDataAccessor.Examples.EntityFrameworkCore.Entities", "PureDataAccessor.Examples.EntityFrameworkCore.Entities\PureDataAccessor.Examples.EntityFrameworkCore.Entities.csproj", "{B49DD3AE-A8EC-4758-A69B-21FF2AE8A0ED}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PureDataAccessor.Mongo", "PureDataAccessor.Mongo\PureDataAccessor.Mongo.csproj", "{1E29BA2A-24A1-4C90-A0B6-78B545EA36B4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mongo", "Mongo", "{A8C39B2F-B900-4D63-B6C8-742FD3740358}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PureDataAccessor.Examples.Mongo", "PureDataAccessor.Examples.Mongo\PureDataAccessor.Examples.Mongo.csproj", "{B6EFD23C-0D64-41A4-80FB-00534A3A9DD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PureDataAccessor.Examples.Mongo.Entities", "PureDataAccessor.Examples.Mongo.Entities\PureDataAccessor.Examples.Mongo.Entities.csproj", "{825F247F-F4B4-4A92-82AC-464F87B3CBCC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +29,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BEF6A502-6F3D-4A46-8F3A-267C3261FD63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BEF6A502-6F3D-4A46-8F3A-267C3261FD63}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BEF6A502-6F3D-4A46-8F3A-267C3261FD63}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BEF6A502-6F3D-4A46-8F3A-267C3261FD63}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CC4D201B-7200-4D2E-8F41-F00A9CF4B08A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CC4D201B-7200-4D2E-8F41-F00A9CF4B08A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC4D201B-7200-4D2E-8F41-F00A9CF4B08A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -41,16 +41,31 @@ Global
 		{B49DD3AE-A8EC-4758-A69B-21FF2AE8A0ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B49DD3AE-A8EC-4758-A69B-21FF2AE8A0ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B49DD3AE-A8EC-4758-A69B-21FF2AE8A0ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E29BA2A-24A1-4C90-A0B6-78B545EA36B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E29BA2A-24A1-4C90-A0B6-78B545EA36B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E29BA2A-24A1-4C90-A0B6-78B545EA36B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E29BA2A-24A1-4C90-A0B6-78B545EA36B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6EFD23C-0D64-41A4-80FB-00534A3A9DD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6EFD23C-0D64-41A4-80FB-00534A3A9DD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6EFD23C-0D64-41A4-80FB-00534A3A9DD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6EFD23C-0D64-41A4-80FB-00534A3A9DD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{825F247F-F4B4-4A92-82AC-464F87B3CBCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{825F247F-F4B4-4A92-82AC-464F87B3CBCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{825F247F-F4B4-4A92-82AC-464F87B3CBCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{825F247F-F4B4-4A92-82AC-464F87B3CBCC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{BEF6A502-6F3D-4A46-8F3A-267C3261FD63} = {3E5DF1BA-9ABF-41A9-A9C0-D347E8771976}
 		{CC4D201B-7200-4D2E-8F41-F00A9CF4B08A} = {6761FE09-52E3-4942-B7BD-767C836D8A47}
 		{45FDE202-691C-4D26-8B86-75AB58D9DE7C} = {01F0B4F0-129F-4115-9CAD-CA7C949D26A8}
 		{01F0B4F0-129F-4115-9CAD-CA7C949D26A8} = {337A8C80-4946-4C8D-B8AE-FEEC62B2C3FB}
 		{B49DD3AE-A8EC-4758-A69B-21FF2AE8A0ED} = {01F0B4F0-129F-4115-9CAD-CA7C949D26A8}
+		{1E29BA2A-24A1-4C90-A0B6-78B545EA36B4} = {6761FE09-52E3-4942-B7BD-767C836D8A47}
+		{A8C39B2F-B900-4D63-B6C8-742FD3740358} = {337A8C80-4946-4C8D-B8AE-FEEC62B2C3FB}
+		{B6EFD23C-0D64-41A4-80FB-00534A3A9DD8} = {A8C39B2F-B900-4D63-B6C8-742FD3740358}
+		{825F247F-F4B4-4A92-82AC-464F87B3CBCC} = {A8C39B2F-B900-4D63-B6C8-742FD3740358}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4CE5975F-B4FD-491A-BFA6-F8B721DD66E4}

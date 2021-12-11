@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace PureDataAccessor.Core.Repository
+namespace PureDataAccessor.EntityFrameworkCore.Repository
 {
     public interface IPDARepository<TEntity>
     {

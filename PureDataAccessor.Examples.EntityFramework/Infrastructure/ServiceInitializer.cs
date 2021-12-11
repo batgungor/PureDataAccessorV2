@@ -1,15 +1,13 @@
-﻿using PureDataAccessor.Core.UnitOfWork;
+﻿using PureDataAccessor.EntityFrameworkCore.UnitOfWork;
 using PureDataAccessor.Examples.EntityFrameworkCore.Entities;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace PureDataAccessor.Examples.EntityFrameworkCore.Infrastructure
 {
     public static class ServiceInitializer
     {
-        public static void SeedData(IPDAUnitOfWork unitOfWork)
+        public static void SeedData(IPDAEFUnitOfWork unitOfWork)
         {
             var categoryRepository = unitOfWork.GetRepository<CategoryEntity>();
             if (!categoryRepository.Get().Any())

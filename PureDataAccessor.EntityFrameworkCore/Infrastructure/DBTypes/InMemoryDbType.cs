@@ -1,22 +1,17 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PureDataAccessor.Core;
-using PureDataAccessor.Core.Repository;
-using PureDataAccessor.EntityFrameworkCore.Context;
-using PureDataAccessor.EntityFrameworkCore.Repository;
 
 namespace PureDataAccessor.EntityFrameworkCore.Infrastructure.DBTypes
 {
-    public class InMemoryDbType : IDBType
+    public class InMemoryDbType : DBType
     {
-        public string DbName { get; set; }
-        public void UseDbType(DbContextOptionsBuilder optionsBuilder)
+        private readonly string _dbName;
+        public InMemoryDbType(string dbName)
         {
-            optionsBuilder.UseInMemoryDatabase(DbName);
+            _dbName = dbName;
         }
-        public IPDARepository<TEntity> GetRepository<TEntity>(PDAEFContext context) where TEntity : PDABaseEntity
+        public override void UseDbType(DbContextOptionsBuilder optionsBuilder)
         {
-            var repository = new PDAEFRepository<TEntity>(context);
-            return repository;
+            optionsBuilder.UseInMemoryDatabase(_dbName);
         }
     }
 }

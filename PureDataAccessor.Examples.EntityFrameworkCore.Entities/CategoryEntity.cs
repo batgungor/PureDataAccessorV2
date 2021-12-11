@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace PureDataAccessor.Examples.EntityFrameworkCore.Entities
 {
     [Table("Categories")]
-    public class CategoryEntity : PDABaseEntity
+    public class CategoryEntity : PDAEFBaseEntity
     {
         public int Id { get; set; }
         public string Name { get; set; }

@@ -7,14 +7,11 @@ namespace PureDataAccessor.EntityFrameworkCore.Infrastructure
     {
         public PDAEFContextOptions()
         {
-            DBType = new InMemoryDbType()
-            {
-                DbName = "PDAInMemoryDb"
-            };
+            DBType = new InMemoryDbType("PDAInMemoryDb");
             EnableAdminDeveloperMode = false;
             EnableLazyLoading = false;
         }
-        public IDBType DBType { get; set; }
+        public DBType DBType { get; set; }
         public Assembly EntityAssembly { get; set; }
         public bool EnableLazyLoading { get; set; }
         public bool EnableAdminDeveloperMode { get; set; }

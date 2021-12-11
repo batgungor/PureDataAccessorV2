@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Context\" />
+    <ProjectReference Include="..\PureDataAccessor.Mongo\PureDataAccessor.Mongo.csproj" />
   </ItemGroup>
 
 </Project>

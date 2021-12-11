@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PureDataAccessor.Core\PureDataAccessor.Core.csproj" />
     <ProjectReference Include="..\PureDataAccessor.EntityFrameworkCore\PureDataAccessor.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\PureDataAccessor.Examples.EntityFrameworkCore.Entities\PureDataAccessor.Examples.EntityFrameworkCore.Entities.csproj" />
   </ItemGroup>

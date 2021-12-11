@@ -1,14 +1,11 @@
 ﻿using PureDataAccessor.Core;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PureDataAccessor.Examples.EntityFrameworkCore.Entities
 {
     [Table("Products")]
-    public class ProductEntity : PDABaseEntity
+    public class ProductEntity : PDAEFBaseEntity
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public int CategoryId { get; set; }
         public virtual CategoryEntity Category { get; set; }

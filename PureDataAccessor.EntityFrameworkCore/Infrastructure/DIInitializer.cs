@@ -1,12 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using PureDataAccessor.Core.UnitOfWork;
 using PureDataAccessor.EntityFrameworkCore.Context;
 using PureDataAccessor.EntityFrameworkCore.UnitOfWork;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PureDataAccessor.EntityFrameworkCore.Infrastructure
 {
@@ -16,7 +10,7 @@ namespace PureDataAccessor.EntityFrameworkCore.Infrastructure
         {
             services.AddSingleton(options);
             services.AddDbContext<PDAEFContext>();
-            services.AddScoped<IPDAUnitOfWork, PDAEFUnitOfWork>();
+            services.AddScoped<IPDAEFUnitOfWork, PDAEFUnitOfWork>();
         }
     }
 }

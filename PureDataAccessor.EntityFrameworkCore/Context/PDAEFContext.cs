@@ -16,22 +16,23 @@ namespace PureDataAccessor.EntityFrameworkCore.Context
 
         }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseLazyLoadingProxies(_dbContextOptions.EnableLazyLoading);
+            _dbContextOptions.DBType.UseDbType(optionsBuilder);
+            base.OnConfiguring(optionsBuilder);
+        }
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            var baseEntityType = typeof(PDABaseEntity);
+            var baseEntityType = typeof(PDAEFBaseEntity);
             var entitiesAssembly = _dbContextOptions.EntityAssembly;
             var entities = entitiesAssembly.GetTypes().Where(q => q.BaseType == baseEntityType).ToList();
             foreach (var entityType in entities)
             {
                 UseAsEntity(modelBuilder, entityType);
             }
-        }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseLazyLoadingProxies(_dbContextOptions.EnableLazyLoading);
-            _dbContextOptions.DBType.UseDbType(optionsBuilder);
-            base.OnConfiguring(optionsBuilder);
         }
 
         private static void UseAsEntity(ModelBuilder modelBuilder, Type type)

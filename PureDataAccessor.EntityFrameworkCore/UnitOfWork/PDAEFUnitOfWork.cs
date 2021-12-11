@@ -1,7 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PureDataAccessor.Core;
-using PureDataAccessor.Core.Repository;
-using PureDataAccessor.Core.UnitOfWork;
 using PureDataAccessor.EntityFrameworkCore.Context;
 using PureDataAccessor.EntityFrameworkCore.Infrastructure;
 using PureDataAccessor.EntityFrameworkCore.Repository;
@@ -11,7 +9,7 @@ using System.Linq;
 
 namespace PureDataAccessor.EntityFrameworkCore.UnitOfWork
 {
-    public class PDAEFUnitOfWork : IPDAUnitOfWork
+    public class PDAEFUnitOfWork : IPDAEFUnitOfWork
     {
         private bool _isDisposed = false;
         private readonly PDAEFContext _context;
@@ -24,7 +22,7 @@ namespace PureDataAccessor.EntityFrameworkCore.UnitOfWork
             _repositories = new Dictionary<Type, object>();
         }
 
-        public IPDARepository<TEntity> GetRepository<TEntity>() where TEntity : PDABaseEntity
+        public IPDARepository<TEntity> GetRepository<TEntity>() where TEntity : PDAEFBaseEntity
         {
             IPDARepository<TEntity> repository;
             var repositoryAlreadyCreated = _repositories.ContainsKey(typeof(TEntity));
@@ -34,7 +32,7 @@ namespace PureDataAccessor.EntityFrameworkCore.UnitOfWork
             }
             else
             {
-                repository = _contextOptions.DBType.GetRepository<TEntity>(_context);
+                repository = new PDAEFRepository<TEntity>(_context);
                 _repositories.Add(typeof(TEntity), repository);
             }
             return repository;
